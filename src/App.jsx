@@ -1,6 +1,5 @@
 import { useState, useEffect } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
+import { MainApp } from './styled.js'
 import './App.css'
 
 function App() {
@@ -14,11 +13,12 @@ function App() {
   }, [count]);
 
   return (
-    <>
-        <button onClick={() => incrementCount()}>
-          count is {count}
-        </button>
-    </>
+    <MainApp>
+      <b>Count Me: &nbsp;</b>
+      <button onClick={() => incrementCount()}>
+        count is {count}
+      </button>
+    </MainApp>
   )
 }
 
