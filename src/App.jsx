@@ -1,6 +1,5 @@
 import { useState, useEffect } from 'react'
-import { MainApp } from './styled.js'
-import './App.css'
+import {Heading, Text, Button, Container, Center, Highlight, Mark} from '@chakra-ui/react';
 
 function App() {
   const COUNT_KEY_NAME = "count";
@@ -13,12 +12,65 @@ function App() {
   }, [count]);
 
   return (
-    <MainApp>
-      <b>Count Me: &nbsp;</b>
-      <button onClick={() => incrementCount()}>
-        count is {count}
-      </button>
-    </MainApp>
+    <>
+      <Container
+        maxW={['full', 'container.lg']}
+        mt={4}
+        mb={4}
+      >
+        <Center>
+          <Heading lineHeight='tall'>
+            <Highlight
+              query='Stranger'
+              styles={
+              {
+                px: '2',
+                py: '1',
+                rounded: 'full',
+                bg: 'red.100'
+              }
+            }
+            >
+              Welcome Stranger!
+            </Highlight>
+          </Heading>
+        </Center>
+        <Center>
+          <Text
+            fontSize='lg'
+            color='tomato'
+            fontStyle='italic'
+          >
+            This is my beautiful React Tutorial
+          </Text>
+        </Center>
+        <Center mb={2} fontWeight='bold'>
+          <Mark
+            bg='black'
+            color='white'
+            fontSize='lg'
+            fontWeight='bold'
+            fontFamily='NewYork'
+            p='1'
+          >
+            Count is {count}
+          </Mark>
+        </Center>
+        <Center>
+          <Button
+            size='md'
+            height='48px'
+            widht='200px'
+            border='2px'
+            variant='solid'
+            fontStyle='italic'
+            onClick={() => incrementCount()}
+          >
+            Count Me!
+          </Button>
+        </Center>
+      </Container>
+    </>
   )
 }
 
